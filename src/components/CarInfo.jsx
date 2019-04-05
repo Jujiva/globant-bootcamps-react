@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 
-class CarInfo extends Component {
+class VehicleInfo extends Component {
   constructor(props){
     super(props);
   }
 
   render() {
-    
+
     return (
-      <div classname='CarInfo'>
+      <div id="vehicleinfo">
         <h1>{this.props.brand} {this.props.model}</h1>
+        <p>Type: {this.props.type}</p>
         <p>{this.props.engine}</p>
         <p>{this.props.doors}</p>
         <p>Type: {this.props.type}</p>
@@ -18,4 +19,4 @@ class CarInfo extends Component {
   }
 }
 
-export default CarInfo
+export default VehicleInfo

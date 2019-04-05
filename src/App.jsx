@@ -1,17 +1,33 @@
 import React, {Component} from 'react';
-import Car from './components/Car.jsx'
+import Form from './Form.jsx';
+import List from './List.jsx';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 class App extends Component {
+
   constructor(props){
     super(props);
-    this.state = { boughtCars: 0 }
+    this.state = { 
+      boughtVehicles: 0,
+    }
+  }
+
+  changeHandler = event => {
+    this.setState({
+      email: event.target.value
+    });
   }
 
   render() {
     return (
-      <div classname='App'>
-        <Car carsOwned = {this.state.boughtCars} />
-      </div>
+      <Router>
+        <div id="app">
+          <main>
+            <Route exact path="/" component={Form} />
+            <Route path="/vehicles" component={List} />
+          </main>
+        </div>
+      </Router>
     );
   }
 }

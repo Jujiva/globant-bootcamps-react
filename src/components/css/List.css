@@ -1,0 +1,9 @@
+.main{
+  display: flex;
+  background: -moz-radial-gradient();
+  margin: 40px;
+  flex-direction: row;
+  min-width: 20%;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}

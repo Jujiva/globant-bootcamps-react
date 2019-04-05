@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import CarInfo from './CarInfo.jsx';
-import CarActions from './CarActions.jsx';
+import VehicleInfo from './VehicleInfo.jsx';
+import VehicleActions from './VehicleActions.jsx';
 
 class Vehicle extends Component {
 
@@ -8,16 +8,16 @@ class Vehicle extends Component {
 
     super(props);
     this.state = {
-      type: '',
-      brand: "Toyota",
-      model: 'Hilux',
-      engine: '2.4 l D-4D',
-      doors: 'Four',
-      type: '4x4',
-      vehiclessBought: 0
+      vehicleName: "",
+      brand: "",
+      model: "",
+      engine: "",
+      doors: "",
+      type: "",
+      img: "",
+      vehiclesBought: 0
     };
     this.buyVehicle = this.buyVehicle.bind(this)
-    this.sellVehicle = this.sellVehicle.bind(this)
 
   }
 
@@ -25,26 +25,28 @@ class Vehicle extends Component {
     this.setState({vehiclesBought: this.state.vehiclesBought += 1});
   }
 
-  sellVehicle = event => {
-    this.setState({vehiclesBought: (this.state.vehiclesBought > 0) ? this.state.vehiclesBought - 1 : 0})
+  componentDidMount(){
+    this.setState(this.props)
   }
 
+  
 
   render() {
 
     return (
       <div id="element">
         <VehicleInfo
+          vehicleName = {this.state.vehicleName}
           brand = {this.state.brand}
           model = {this.state.model}
           engine = {this.state.engine}
           doors = {this.state.doors}
           type = {this.state.type}
+          img = {this.state.img}
         />
-      <VehicleActions
-          vehiclesBought = {this.state.carsBought}
-          buyVehicle = {this.buyCar}
-          sellVehicle = {this.sellCar}
+       <VehicleActions
+          vehiclesBought = {this.state.vehiclesBought}
+          buyVehicle = {this.buyVehicle}
         />
       </div>
     )
@@ -52,4 +54,4 @@ class Vehicle extends Component {
   }
 }
 
-export default Car
+export default Vehicle

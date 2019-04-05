@@ -10,28 +10,11 @@ class BuyButton extends React.Component {
 
     return (
       <Fragment>
-        <ButtonGeneric text="Buy Vecicle" onClickHandler={this.props.onClickHandler}> </ButtonGeneric>
+        <ButtonGeneric text="Buy Vehicle" onClickHandler={this.props.onClickHandler}> </ButtonGeneric>
       </Fragment>
     );
   }
 }
-
-
-class SellButton extends React.Component {
-
-  constructor(props){
-    super(props);
-  }
-  render(){
-
-    return (
-      <Fragment>
-        <ButtonGeneric text="Sell Vehicle" onClickHandler={this.props.onClickHandler}></ButtonGeneric>
-      </Fragment>
-    );
-  }
-}
-
 
 
 class VehicleActions extends Component {
@@ -40,7 +23,6 @@ class VehicleActions extends Component {
     super(props)
   }
 
-
   render(){
 
     return(
@@ -48,8 +30,6 @@ class VehicleActions extends Component {
         <p>Vehicles currently owned: {this.props.vehiclesBought}</p>
         <div>
           <BuyButton onClickHandler={this.props.buyVehicle}/>
-          <br/>
-          <SellButton onClickHandler={this.props.sellVehicle}/>
         </div>
       </div>
     );

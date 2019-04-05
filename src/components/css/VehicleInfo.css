@@ -1,0 +1,27 @@
+.vehicleinfo {
+  display: flex;
+  background-color: whitesmoke;
+  max-width: 80%;
+  min-width: 20%;
+}
+
+.headercontainer{
+  display: flex;
+  width: max-content;
+  min-width: 20%;
+}
+
+.infocontainer{
+  display: flex;
+  flex-flow: wrap;
+  position: bottom;
+}
+
+h1{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+p{
+  width: max-content;
+  font-family: 'Courier New', Courier, monospace;
+}
